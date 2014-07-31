@@ -1,4 +1,4 @@
-This problem aims to find the accuracy of an appliance detection algorithm.
+-- This problem aims to find the accuracy of an appliance detection algorithm --
 
 Setup:
 We are given whole home energy data and a truth set of appliances defined by their wattage in Kilo Watts (kW)

@@ -18,7 +18,7 @@ Find the **True Positives** (Detected correctly),
 **False Positives** (Detected incorrectly) and
 **False Negatives** (Did not detect)
 
-A detected appliances is considered correct if it is **within 10%** of the truth.
+A detected appliance is considered correct if it is **within 10%** of the truth.
 
 In the above example 
 ```

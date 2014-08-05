@@ -30,4 +30,6 @@ False Negatives = [ 5.0 (_) ]                 ---> Failed to detect a 5.0 kW dry
 Write a simple python library for algorithm developers to use when measuring the performance of their appliance detection algorithms.
 
 ##### Note:
-Be sure to consider edge cases.  Use your best judgement and the provided context to decide on how to deal with them.
+
+* Be sure to consider edge cases.  Use your best judgement and the provided context to decide on how to deal with them.
+* Use a public version control system such as github or bitbucket and check in with enough frequency that we can get a rough idea of the time spent working on the solution.

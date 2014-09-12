@@ -10,7 +10,7 @@ truth set: [ 0.2, 5.0, 1.5 ]
 ```
 After this data is analyzed a "detected" appliance set is created --> 
 ```
-detected set: [ 0.19, 1.46, 1.12 ]
+detected set: [ 0.19, 1.46, 1.8, 1.12 ]
 ```
 
 ##### Problem:
@@ -23,7 +23,7 @@ A detected appliance is considered correct if it is **within 10%** of the truth.
 In the above example 
 ```
 True Positives = [ 0.2 (0.19), 1.5 (1.46) ]   ---> Detected Fridge and Electric Vehicle Correctly
-False Positives = [  _ (1.12) ]               ---> Detected a 1.12 kW appliance that was not present
+False Positives = [  _ (1.12), _ (1.8) ]      ---> Detected a 1.12 kW and 1.8 kW appliance that were not present
 False Negatives = [ 5.0 (_) ]                 ---> Failed to detect a 5.0 kW dryer
 ```
 

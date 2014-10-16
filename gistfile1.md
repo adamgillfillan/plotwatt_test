@@ -27,7 +27,7 @@ False Positives = [  _ (1.12), _ (1.8) ]      ---> Detected a 1.12 kW and 1.8 kW
 False Negatives = [ 5.0 (_) ]                 ---> Failed to detect a 5.0 kW dryer
 ```
 
-Write a simple python library for algorithm developers to use when measuring the performance of their appliance detection algorithms.
+Write a simple library for algorithm developers to use when measuring the performance of their appliance detection algorithms.
 
 ##### Notes:
 

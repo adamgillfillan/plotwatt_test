@@ -13,13 +13,33 @@ def detection_accuracy(truth, detected):
     false_positives = []
     false_negatives = []
 
+    # determine true positives:
+    # for detected_element in detected:
+    #     for truth_element in truth:
+    #         value = round(abs(truth_element - detected_element), 2)
+    #         if detected_element
     for detected_element in detected:
         for truth_element in truth:
             value = round(abs(truth_element - detected_element), 2)
+            #print(detected_element, truth_element, value, (value*100))
             if value * 100 <= 10:
-                true_positives.append(detected_element)
-            if value * 100 > 10:
-                false_negatives.append(detected_element)
+                if detected_element not in true_positives:
+                    true_positives.append(detected_element)
+                    break
 
+    for detected_element in detected:
+        for truth_element in truth:
+            value = round(abs(truth_element - detected_element), 2)
+            #print(detected_element, truth_element, value, (value*100))
+            if value * 100 > 10:
+                        if detected_element not in false_positives and detected_element not in true_positives:
+                            false_positives.append(detected_element)
+                            break
 
     return [true_positives, false_positives, false_negatives]
+
+
+truth_1 = [0.2, 5.0, 1.5]
+detected_1 = [1.8, 1.46, .19, 1.12]
+
+print(detection_accuracy(truth_1, detected_1))

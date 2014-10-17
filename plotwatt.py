@@ -12,29 +12,34 @@ def detection_accuracy(truth, detected):
     true_positives = []
     false_positives = []
     false_negatives = []
+    temp_false_negatives = []
 
-    # determine true positives:
-    # for detected_element in detected:
-    #     for truth_element in truth:
-    #         value = round(abs(truth_element - detected_element), 2)
-    #         if detected_element
+    # determine true positives
     for detected_element in detected:
         for truth_element in truth:
             value = round(abs(truth_element - detected_element), 2)
-            #print(detected_element, truth_element, value, (value*100))
             if value * 100 <= 10:
                 if detected_element not in true_positives:
                     true_positives.append(detected_element)
+                    if truth_element not in false_negatives:
+                        temp_false_negatives.append(truth_element)
                     break
 
+    # determine false positives
     for detected_element in detected:
         for truth_element in truth:
             value = round(abs(truth_element - detected_element), 2)
-            #print(detected_element, truth_element, value, (value*100))
             if value * 100 > 10:
-                        if detected_element not in false_positives and detected_element not in true_positives:
-                            false_positives.append(detected_element)
-                            break
+                if detected_element not in false_positives and detected_element not in true_positives:
+                    false_positives.append(detected_element)
+                    if truth_element not in false_negatives:
+                        temp_false_negatives.append(truth_element)
+                    break
+
+    # determine false negatives by taking the difference of temp_false_negatives and truth values
+    for truth_element in truth:
+        if truth_element not in temp_false_negatives:
+            false_negatives.append(truth_element)
 
     return [true_positives, false_positives, false_negatives]
 

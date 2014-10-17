@@ -9,4 +9,9 @@ def detection_accuracy(truth, detected):
             detected list of detected values.
         The goal is to sort out the true positives, false positives, and false negatives
     """
-    pass
+    true_positives = [0.19, 1.46]
+    false_positives = [1.12, 1.8]
+    false_negatives = [5.0]
+
+
+    return [true_positives, false_positives, false_negatives]

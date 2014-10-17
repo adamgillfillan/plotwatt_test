@@ -13,6 +13,6 @@ class TestDetectionAccuracy(unittest.TestCase):
         self.false_negatives = [5.0]
 
         self.assertEquals(plotwatt.detection_accuracy(self.truth, self.detected),
-                          self.true_positives,
+                          [self.true_positives,
                           self.false_positives,
-                          self.false_negatives)
+                          self.false_negatives])

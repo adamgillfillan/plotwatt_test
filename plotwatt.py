@@ -17,9 +17,6 @@ def detection_accuracy(truth, detected):
     false_negatives = []
     temp_false_negatives = []
 
-    # edge cases
-
-
     # determine true positives
     for detected_element in detected:
         for truth_element in truth:
@@ -55,9 +52,3 @@ def detection_accuracy(truth, detected):
     false_negatives = [x for x in false_negatives if x > 0]
 
     return [true_positives, false_positives, false_negatives]
-
-
-truth_1 = [0.2, 5.0, 1.5]
-detected_1 = [1.8, 1.46, .19, 1.12]
-
-print(detection_accuracy(truth_1, detected_1))

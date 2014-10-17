@@ -18,9 +18,12 @@ def detection_accuracy(truth, detected):
     for detected_element in detected:
         for truth_element in truth:
             value = round(abs(truth_element - detected_element), 2)
+            # if value is within 10%, it is a true positive
             if value * 100 <= 10:
                 if detected_element not in true_positives:
                     true_positives.append(detected_element)
+                    # we know that the truth element was matched, so add it to a temporary false_negatives array. later
+                    # we can compare this to the truth array and difference them resulting in our false_negatives
                     if truth_element not in false_negatives:
                         temp_false_negatives.append(truth_element)
 
@@ -28,6 +31,7 @@ def detection_accuracy(truth, detected):
     for detected_element in detected:
         for truth_element in truth:
             value = round(abs(truth_element - detected_element), 2)
+            # if value is within 10%, it is a true positive
             if value * 100 > 10:
                 if detected_element not in false_positives and detected_element not in true_positives:
                     false_positives.append(detected_element)

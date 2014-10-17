@@ -23,7 +23,6 @@ def detection_accuracy(truth, detected):
                     true_positives.append(detected_element)
                     if truth_element not in false_negatives:
                         temp_false_negatives.append(truth_element)
-                    break
 
     # determine false positives
     for detected_element in detected:
@@ -34,7 +33,6 @@ def detection_accuracy(truth, detected):
                     false_positives.append(detected_element)
                     if truth_element not in false_negatives:
                         temp_false_negatives.append(truth_element)
-                    break
 
     # determine false negatives by taking the difference of temp_false_negatives and truth values
     for truth_element in truth:
